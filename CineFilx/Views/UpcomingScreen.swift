@@ -5,7 +5,7 @@ struct UpcomingView: View {
     let upcomingMovies: [MovieUpcoming] = [
         MovieUpcoming(title: "Deadpool 3", posterURL: Constants.deadpool2, releaseDate: "2025-07-25", genre: "Action"),
         MovieUpcoming(title: "Inside Out 2", posterURL: Constants.insideOut , releaseDate: "2025-08-10", genre: "Animation"),
-        MovieUpcoming(title: "The Batman 2", posterURL: Constants.batman2, releaseDate: "2025-09-18", genre: "Thriller")
+        MovieUpcoming(title: "Minnal murali", posterURL: Constants.batman2, releaseDate: "2025-09-18", genre: "Thriller")
     ]
 
     var body: some View {
