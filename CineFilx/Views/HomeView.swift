@@ -9,9 +9,12 @@ struct HomeView: View {
         Constants.oppenheimer,
         Constants.insideOut,
         Constants.testUrl1,
-        Constants.testUrl3
+        Constants.testUrl2
         
     ]
+    
+    @StateObject private var viewModel = MovieViewModel()
+    let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
     var testImage = "https://image.tmdb.org/t/p/w500/nnl6OWkyPpuMm595hmAxNW3rZFn.jpg"
     
     init() {

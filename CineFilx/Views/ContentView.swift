@@ -27,7 +27,7 @@ struct ContentView: View {
             }
             
             Tab(Constants.lblUpcomingTitle, systemImage:"play.circle") {
-                UpcomingView()
+               UpcomingView()
             }
             Tab(Constants.lblSearchTitle, systemImage:"magnifyingglass") {
                 SearchScreenView()

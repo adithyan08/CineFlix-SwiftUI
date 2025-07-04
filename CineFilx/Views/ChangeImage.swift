@@ -27,7 +27,7 @@ struct ImageCarouselView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .frame(height: 700)
+                                .frame(height: 500)
                                 .clipped()
                                 .cornerRadius(12)
                                 .scaledToFit()
@@ -44,7 +44,7 @@ struct ImageCarouselView: View {
                     .animation(.easeInOut(duration: 0.5), value: currentIndex)
                 }
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .frame(height: 650)
             .onReceive(timer) { _ in
                 withAnimation {
