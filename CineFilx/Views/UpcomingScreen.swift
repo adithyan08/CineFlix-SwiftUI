@@ -26,19 +26,22 @@ struct UpcomingView: View {
                     .scrollContentBackground(.hidden) // So background doesn't override
                 }
             }
-            .task {
-                await viewModel.loadUpcomingMovies()
-            }
+            
+
             .navigationTitle("Upcoming")
             .navigationBarTitleDisplayMode(.large)
+        }.task {
+            await viewModel.loadUpcomingMovies()
         }
         .onAppear {
+            
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = .black
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            
         }
     }
 }
@@ -52,8 +55,7 @@ struct UpcomingMovieRow: View {
             AsyncImage(url: URL(string: imageBaseUrl + (movie.poster_path ?? ""))) { phase in
                 switch phase {
                 case .empty:
-                    //                    ProgressView()
-                    //                        .frame(width: 100, height: 150)
+                   
                     ShimmerMoviePlaceholder()
                 case .success(let image):
                     image

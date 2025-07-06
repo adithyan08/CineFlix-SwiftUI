@@ -28,11 +28,14 @@ enum apiEndpoint: String {
         
         func fetchMovies(from endpoint: apiEndpoint) async throws -> [Movies] {
             
-            
+            let config = URLSessionConfiguration.default
+              config.timeoutIntervalForRequest = 30
+              config.timeoutIntervalForResource = 60
+              let session = URLSession(configuration: config)
             
             let url = endpoint.url(apiKey: apiKey)
             
-            let (data,_) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await session.data(from: url)
             
             let decode = try JSONDecoder().decode(MovieResponse.self, from: data)
             
